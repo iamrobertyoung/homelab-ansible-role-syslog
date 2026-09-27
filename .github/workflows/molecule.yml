@@ -28,5 +28,13 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      # The host's AppArmor profile for /usr/sbin/rsyslogd also attaches to the
+      # container's rsyslogd and denies it the private key, failing `rsyslogd -N1`.
+      - name: Unload the host rsyslogd AppArmor profile
+        run: |
+          if [ -f /etc/apparmor.d/usr.sbin.rsyslogd ]; then
+            sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.rsyslogd
+          fi
+
       - name: Run molecule test
         run: molecule test
