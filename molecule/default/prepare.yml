@@ -1,0 +1,20 @@
+---
+# The role expects the host's certificate and key to already exist, and
+# `rsyslogd -N1` in verify fails if they cannot be read.
+- name: Prepare
+  hosts: all
+  become: true
+  tasks:
+    - name: Install openssl
+      ansible.builtin.apt:
+        name: openssl
+        update_cache: true
+
+    - name: Create a self-signed certificate for syslog_fqdn
+      ansible.builtin.command: >-
+        openssl req -x509 -newkey rsa:2048 -nodes -days 1
+        -subj /CN=test.example.com
+        -keyout /etc/ssl/private/test.example.com.pem
+        -out /etc/ssl/certs/test.example.com.crt
+      args:
+        creates: /etc/ssl/certs/test.example.com.crt
