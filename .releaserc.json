@@ -2,7 +2,7 @@
   "branches": [
     "main"
   ],
-  "repositoryUrl": "https://github.com/RobertYoung/homelab-ansible-role-syslog",
+  "repositoryUrl": "https://github.com/iamrobertyoung/homelab-ansible-role-syslog",
   "plugins": [
     [
       "@semantic-release/commit-analyzer",
