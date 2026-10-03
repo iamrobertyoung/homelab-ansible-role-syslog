@@ -1,9 +1,9 @@
 # homelab-ansible-role-syslog
 
-[![Lint](https://github.com/RobertYoung/homelab-ansible-role-syslog/actions/workflows/lint.yml/badge.svg)](https://github.com/RobertYoung/homelab-ansible-role-syslog/actions/workflows/lint.yml)
-[![Release](https://github.com/RobertYoung/homelab-ansible-role-syslog/actions/workflows/release.yml/badge.svg)](https://github.com/RobertYoung/homelab-ansible-role-syslog/actions/workflows/release.yml)
+[![Lint](https://github.com/iamrobertyoung/homelab-ansible-role-syslog/actions/workflows/lint.yml/badge.svg)](https://github.com/iamrobertyoung/homelab-ansible-role-syslog/actions/workflows/lint.yml)
+[![Release](https://github.com/iamrobertyoung/homelab-ansible-role-syslog/actions/workflows/release.yml/badge.svg)](https://github.com/iamrobertyoung/homelab-ansible-role-syslog/actions/workflows/release.yml)
 [![SLSA 3](https://slsa.dev/images/gh-badge-level3.svg)](https://slsa.dev)
-[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/RobertYoung/homelab-ansible-role-syslog/badge)](https://scorecard.dev/viewer/?uri=github.com/RobertYoung/homelab-ansible-role-syslog)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/iamrobertyoung/homelab-ansible-role-syslog/badge)](https://scorecard.dev/viewer/?uri=github.com/iamrobertyoung/homelab-ansible-role-syslog)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Ansible role for configuring rsyslog to forward logs to one or more remote servers over TLS.
@@ -68,7 +68,7 @@ line sits in limbo until it says something else.
 ### Install via requirements.yml
 
 ```yaml
-- src: git@github.com:RobertYoung/homelab-ansible-role-syslog.git
+- src: git@github.com:iamrobertyoung/homelab-ansible-role-syslog.git
   scm: git
   version: main
   name: syslog
@@ -118,22 +118,22 @@ The role expects the following certificate files to exist on the target host:
 
 This project implements [SLSA](https://slsa.dev/) Level 3 provenance for release artifacts.
 
-- Provenance attestations are submitted to [GitHub Attestations](https://github.com/RobertYoung/homelab-ansible-role-syslog/attestations)
+- Provenance attestations are submitted to [GitHub Attestations](https://github.com/iamrobertyoung/homelab-ansible-role-syslog/attestations)
 - Release artifacts include `.intoto.jsonl` provenance files
-- Security posture tracked via [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/RobertYoung/homelab-ansible-role-syslog)
+- Security posture tracked via [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/iamrobertyoung/homelab-ansible-role-syslog)
 
 ### Verifying Release Provenance
 
 ```bash
 # Using GitHub CLI (recommended)
 gh attestation verify syslog-<VERSION>.tar.gz \
-  --repo RobertYoung/homelab-ansible-role-syslog
+  --repo iamrobertyoung/homelab-ansible-role-syslog
 
 # Or using slsa-verifier
 VERSION="v1.2.0"  # Replace with desired version
 slsa-verifier verify-artifact syslog-${VERSION}.tar.gz \
   --provenance-path syslog-${VERSION}.tar.gz.intoto.jsonl \
-  --source-uri github.com/RobertYoung/homelab-ansible-role-syslog \
+  --source-uri github.com/iamrobertyoung/homelab-ansible-role-syslog \
   --source-tag "${VERSION}"
 ```
 
