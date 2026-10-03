@@ -4,7 +4,7 @@
 # optionally `framing`.
 #
 # The default is the in-cluster Loki receiver, and it used to be Graylog
-# (RobertYoung/homelab-talos#178). A repo migrates by bumping this role's
+# (iamrobertyoung/homelab-platform#178). A repo migrates by bumping this role's
 # version and nothing else: the bump *is* the cutover, which is why it is a
 # major release rather than something that could arrive unnoticed.
 #
